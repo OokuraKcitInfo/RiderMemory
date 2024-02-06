@@ -1,0 +1,26 @@
+[
+  {
+    "name": "税金",
+    "sort_order": 1
+  },
+  {
+    "name": "自賠責保険",
+    "sort_order": 2
+  },
+  {
+    "name": "任意保険",
+    "sort_order": 3
+  },
+  {
+    "name": "車検",
+    "sort_order": 4
+  },
+  {
+    "name": "消耗品",
+    "sort_order": 5
+  },
+  {
+    "name": "ガソリン",
+    "sort_order": 6
+  }
+]
