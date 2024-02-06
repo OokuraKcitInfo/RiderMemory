@@ -36,4 +36,9 @@
     <string name="RefuelRecord">給油記録</string>
     <string name="ExpenseRecode">出費記録</string>
     <string name="FuelEfficiency">燃費</string>
+
+    <string name="validate_error_dialog_title">入力エラー</string>
+    <string name="validate_required_message">必須入力です。</string>
+    <string name="validate_digits_message">数字のみ9桁以下で入力してください。</string>
+    <string name="validate_date_format_message">日付の入力が不正です。</string>
 </resources>

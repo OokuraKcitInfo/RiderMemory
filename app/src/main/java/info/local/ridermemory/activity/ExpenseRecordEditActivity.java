@@ -11,7 +11,13 @@ import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.mobsandgeeks.saripaar.ValidationError;
+import com.mobsandgeeks.saripaar.Validator;
+import com.mobsandgeeks.saripaar.annotation.Digits;
+import com.mobsandgeeks.saripaar.annotation.NotEmpty;
+
 import java.text.ParseException;
+import java.util.List;
 
 import info.local.ridermemory.R;
 import info.local.ridermemory.database.ApplicationViewModel;
@@ -24,10 +30,14 @@ public class ExpenseRecordEditActivity extends AppCompatActivity {
     public static final String ENTITY_KEY = "entityKey";
     private EditText dateText;
     private Spinner categorySpinner;
+    @NotEmpty(messageResId = R.string.validate_required_message)
+    @Digits(integer = 9, messageResId = R.string.validate_digits_message)
     private EditText expenseAmountText;
     private CategorySpinnerAdapter adapter;
     private ApplicationViewModel viewModel;
     private ExpenseRecordEntity entity;
+    private Validator validator;
+    private boolean isValidated;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +48,29 @@ public class ExpenseRecordEditActivity extends AppCompatActivity {
         initializedComponent();
         createCategorySpinnerList();
         bindComponentEvents();
+        isValidated = false;
+        validator = new Validator(this);
+        validator.setValidationListener(new Validator.ValidationListener() {
+            @Override
+            public void onValidationSucceeded() {
+                isValidated = true;
+            }
+
+            @Override
+            public void onValidationFailed(List<ValidationError> errors) {
+                isValidated = false;
+                for (ValidationError error : errors) {
+                    View errorView = error.getView();
+                    String errorMessage = error.getCollatedErrorMessage(ExpenseRecordEditActivity.this);
+                    if (errorView instanceof EditText) {
+                        EditText et = (EditText) errorView;
+                        et.setError(errorMessage);
+                        et.requestFocus();
+                    }
+                }
+            }
+        });
+        validator.put(dateText, Constant.DATE_INPUT_RULE);
     }
 
     private void initializedComponent() {
@@ -51,7 +84,7 @@ public class ExpenseRecordEditActivity extends AppCompatActivity {
         viewModel
                 .getCategoryListAsc()
                 .observe(this, categoryList -> {
-                    categoryList.remove(new CategoryEntity(0, "ガソリン", 0));
+                    categoryList.remove(Constant.GASOLINE_CATEGORY);
                     adapter = new CategorySpinnerAdapter(
                             this
                             , android.R.layout.simple_spinner_item
@@ -82,6 +115,8 @@ public class ExpenseRecordEditActivity extends AppCompatActivity {
 
         findViewById(R.id.ereBackButton).setOnClickListener(view -> finish());
         findViewById(R.id.ereSaveButton).setOnClickListener(view -> {
+            validator.validate();
+            if (!isValidated) return;
             try {
                 setEntity();
                 if (entity.getExpenseRecordId() != 0) {
