@@ -1,20 +1,19 @@
 package info.local.ridermemory.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
@@ -28,6 +27,7 @@ import info.local.ridermemory.util.Constant;
 public class ExpenseRecordListActivity extends AppCompatActivity {
     private Spinner itemSpinner;
     private RecyclerView expenseDetailListRecyclerView;
+    private TextView amountText;
     private ApplicationViewModel viewModel;
 
     @Override
@@ -44,6 +44,7 @@ public class ExpenseRecordListActivity extends AppCompatActivity {
     private void initializedComponent() {
         itemSpinner = findViewById(R.id.erlItemSpinner);
         expenseDetailListRecyclerView = findViewById(R.id.erlExpenseDetailList);
+        amountText = findViewById(R.id.erlTotalMoneyTextView);
     }
 
     private void createItemSpinnerList() {
@@ -66,8 +67,8 @@ public class ExpenseRecordListActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 CategoryEntity selectedEntity = (CategoryEntity)itemSpinner.getSelectedItem();
-                // Todo: 選択された期間と一緒にデータの表示条件を postValue する
-                String formattedString = String.format("id: %d, name: %s", selectedEntity.getCategoryId(), selectedEntity.getCategoryName());
+                viewModel.getCategoryIdCondition().postValue(selectedEntity.getCategoryId());
+                viewModel.getExpenseRecordTotalling().observe(ExpenseRecordListActivity.this, expenseRecordTotallingEntity -> amountText.setText(expenseRecordTotallingEntity.getTotalAmount() + ""));
             }
 
             @Override
@@ -95,7 +96,7 @@ public class ExpenseRecordListActivity extends AppCompatActivity {
     }
 
     private class ExpenseRecordListViewAdapter extends RecyclerView.Adapter<ExpenseRecordListViewAdapter.ExpenseRecordListViewHolder> {
-        private List<ExpenseRecordWithCategoryEntity> list;
+        private final List<ExpenseRecordWithCategoryEntity> list;
         public ExpenseRecordListViewAdapter(List<ExpenseRecordWithCategoryEntity> list) {
             this.list = list;
         }

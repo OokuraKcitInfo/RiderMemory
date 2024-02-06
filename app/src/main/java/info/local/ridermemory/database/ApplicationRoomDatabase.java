@@ -27,6 +27,7 @@ public abstract class ApplicationRoomDatabase extends RoomDatabase {
     public abstract CategoryDao categoryDao();
     public abstract ExpenseRecordDao expenseRecordDao();
     public abstract ExpenseRecordWithCategoryDao expenseRecordWithCategoryDao();
+    public abstract ExpenseRecordTotallingDao expenseRecordTotallingDao();
     private static volatile ApplicationRoomDatabase INSTANCE;
     public static final int NUMBER_OF_THREADS = 4;
     static final ExecutorService databaseWriteExecutor =

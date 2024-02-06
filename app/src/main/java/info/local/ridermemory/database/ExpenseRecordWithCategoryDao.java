@@ -11,6 +11,9 @@ import java.util.List;
 @Dao
 public interface ExpenseRecordWithCategoryDao {
     @Transaction
-    @Query("SELECT * FROM t_expense_record")
+    @Query("SELECT * FROM t_expense_record ORDER BY record_date DESC")
     LiveData<List<ExpenseRecordWithCategoryEntity>> findExpenseRecordWithCategoryList();
+    @Transaction
+    @Query("SELECT * FROM t_expense_record WHERE category_id = :categoryId ORDER BY record_date DESC")
+    LiveData<List<ExpenseRecordWithCategoryEntity>> findExpenseRecordWithCategoryListByCategoryId(int categoryId);
 }
