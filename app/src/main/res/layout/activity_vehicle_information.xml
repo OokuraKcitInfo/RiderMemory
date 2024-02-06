@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VehicleInformationActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viEditArea"
+        android:layout_width="match_parent"
+        android:layout_height="670dp"
+        app:layout_constraintBottom_toTopOf="@+id/viFooterArea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/viTireSizeREditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viTireAirPressureFEditText" />
+
+        <EditText
+            android:id="@+id/viTireAirPressureFEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viTireSizeFEditText" />
+
+        <EditText
+            android:id="@+id/viTireSizeFEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viMileageEditText" />
+
+        <TextView
+            android:id="@+id/viVehicleNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="80dp"
+            android:text="@string/VehicleName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/viModelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/Model"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viVehicleNameTextView" />
+
+        <TextView
+            android:id="@+id/viMileageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/NewMileage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viModelTextView" />
+
+        <TextView
+            android:id="@+id/viTireSizeFTextView"
+            android:layout_width="103dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/TireSizeF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viMileageTextView" />
+
+        <TextView
+            android:id="@+id/viTireAirPressureFTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/TireAirPressureF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viTireSizeFTextView" />
+
+        <TextView
+            android:id="@+id/viTireSizeRTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/TireSizeR"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viTireAirPressureFTextView" />
+
+        <TextView
+            android:id="@+id/viTireAirPressureRTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/TireAirPressureR"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viTireSizeRTextView" />
+
+        <TextView
+            android:id="@+id/viEngineOilaMountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/EngineOilaMoun"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viTireAirPressureRTextView" />
+
+        <TextView
+            android:id="@+id/viEngineOilViscosityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/OilViscosity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viEngineOilaMountTextView" />
+
+        <EditText
+            android:id="@+id/viVehicleNameEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/viModelEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viVehicleNameEditText" />
+
+        <EditText
+            android:id="@+id/viMileageEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viModelEditText" />
+
+        <EditText
+            android:id="@+id/viTireAirPressureREditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viTireSizeREditText" />
+
+        <EditText
+            android:id="@+id/viEngineOilaMountEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viTireAirPressureREditText" />
+
+        <EditText
+            android:id="@+id/viEngineOilViscosityLowEditText"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="142dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="61dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toStartOf="@+id/viEngineOilViscosityHighEditText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viEngineOilaMountEditText"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/viEngineOilViscosityHighEditText"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/viEngineOilViscosityLowEditText"
+            app:layout_constraintTop_toBottomOf="@+id/viEngineOilaMountEditText" />
+
+        <TextView
+            android:id="@+id/viMileageUnitTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="@string/MileageUnit"
+            app:layout_constraintBottom_toBottomOf="@+id/viMileageEditText"
+            app:layout_constraintStart_toEndOf="@+id/viMileageEditText"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/viTireAirPressureUnitFTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="@string/TireAirPressureUnit"
+            app:layout_constraintBottom_toBottomOf="@+id/viTireAirPressureFEditText"
+            app:layout_constraintStart_toEndOf="@+id/viTireAirPressureFEditText"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/viTireAirPressureUnitRTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="@string/TireAirPressureUnit"
+            app:layout_constraintBottom_toBottomOf="@+id/viTireAirPressureREditText"
+            app:layout_constraintStart_toEndOf="@+id/viTireAirPressureREditText"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/viEngineOilaMountUnitTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/RefuelMountUnit"
+            app:layout_constraintBottom_toBottomOf="@+id/viEngineOilaMountEditText"
+            app:layout_constraintStart_toEndOf="@+id/viEngineOilaMountEditText"
+            app:layout_constraintTop_toBottomOf="@+id/viTireAirPressureUnitRTextView"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/viEngineOilViscosityUnitTextView"
+            android:layout_width="28dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/EngineOilViscosityUnit"
+            app:layout_constraintBottom_toBottomOf="@+id/viEngineOilViscosityLowEditText"
+            app:layout_constraintStart_toEndOf="@+id/viEngineOilViscosityLowEditText"
+            app:layout_constraintTop_toTopOf="@+id/viEngineOilViscosityBarTextView"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/viEngineOilViscosityBarTextView"
+            android:layout_width="27dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="6dp"
+            android:text="@string/EngineOilViscosityBar"
+            app:layout_constraintBottom_toBottomOf="@+id/viEngineOilViscosityHighEditText"
+            app:layout_constraintStart_toEndOf="@+id/viEngineOilViscosityUnitTextView"
+            app:layout_constraintTop_toTopOf="@+id/viEngineOilViscosityHighEditText"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viFooterArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <Button
+            android:id="@+id/viBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/viEditButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/viEditButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/viBackButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/viSaveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/viBackButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

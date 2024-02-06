@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RefuelRecordEditActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rreEditArea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/rreFooterArea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <EditText
+            android:id="@+id/rreDateEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/rreDateTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rreDateTextView"
+            app:layout_constraintTop_toTopOf="@+id/rreDateTextView"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/rreMileageEditText"
+            android:layout_width="208dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/rreMileageTextView"
+            app:layout_constraintEnd_toEndOf="@+id/rreDateEditText"
+            app:layout_constraintStart_toStartOf="@+id/rreDateEditText"
+            app:layout_constraintTop_toTopOf="@+id/rreMileageTextView"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/rreDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="70dp"
+            android:text="@string/Date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/rreMileageUnitTextView"
+            android:layout_width="23dp"
+            android:layout_height="21dp"
+            android:text="@string/MileageUnit"
+            app:layout_constraintBottom_toBottomOf="@+id/rreMileageEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rreMileageEditText"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/rreMileageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:text="@string/Mileage"
+            app:layout_constraintStart_toStartOf="@+id/rreDateTextView"
+            app:layout_constraintTop_toBottomOf="@+id/rreDateTextView"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/rreRefuelMountTextView"
+            android:layout_width="43dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="70dp"
+            android:text="@string/RefuelMount"
+            app:layout_constraintStart_toStartOf="@+id/rreMileageTextView"
+            app:layout_constraintTop_toBottomOf="@+id/rreMileageTextView"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/rreGasoPriceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:text="@string/GasoPrice"
+            app:layout_constraintStart_toStartOf="@+id/rreRefuelMountTextView"
+            app:layout_constraintTop_toBottomOf="@+id/rreRefuelMountTextView"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/rreRefuelFeeTextView"
+            android:layout_width="48dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="70dp"
+            android:text="@string/RefuelFee"
+            app:layout_constraintStart_toStartOf="@+id/rreGasoPriceTextView"
+            app:layout_constraintTop_toBottomOf="@+id/rreGasoPriceTextView"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/rreRefuelMountEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/rreRefuelMountTextView"
+            app:layout_constraintEnd_toEndOf="@+id/rreMileageEditText"
+            app:layout_constraintStart_toStartOf="@+id/rreMileageEditText"
+            app:layout_constraintTop_toTopOf="@+id/rreRefuelMountTextView"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/rreGasoPriceEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/rreGasoPriceTextView"
+            app:layout_constraintEnd_toEndOf="@+id/rreRefuelMountEditText"
+            app:layout_constraintStart_toStartOf="@+id/rreRefuelMountEditText"
+            app:layout_constraintTop_toTopOf="@+id/rreGasoPriceTextView"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/rreRefuelFeeEditText"
+            android:layout_width="214dp"
+            android:layout_height="42dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/rreRefuelFeeTextView"
+            app:layout_constraintEnd_toEndOf="@+id/rreGasoPriceEditText"
+            app:layout_constraintStart_toStartOf="@+id/rreGasoPriceEditText"
+            app:layout_constraintTop_toTopOf="@+id/rreRefuelFeeTextView"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/rreRefuelMountUnitTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/RefuelMountUnit"
+            app:layout_constraintBottom_toBottomOf="@+id/rreRefuelMountEditText"
+            app:layout_constraintStart_toStartOf="@+id/rreMileageUnitTextView"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/rreGasoPriceUnitEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/GasoPriceUnit"
+            app:layout_constraintBottom_toBottomOf="@+id/rreGasoPriceEditText"
+            app:layout_constraintStart_toStartOf="@+id/rreRefuelMountUnitTextView"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/rreRefuelFeeUnitTextView"
+            android:layout_width="8dp"
+            android:layout_height="17dp"
+            android:text="@string/MoneyUnit"
+            app:layout_constraintBottom_toBottomOf="@+id/rreRefuelFeeEditText"
+            app:layout_constraintStart_toStartOf="@+id/rreGasoPriceUnitEditText"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rreFooterArea"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <Button
+            android:id="@+id/rreBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="戻る"
+            app:layout_constraintBottom_toBottomOf="@+id/rreFooterArea"
+            app:layout_constraintEnd_toStartOf="@id/rreSaveButton"
+            app:layout_constraintStart_toStartOf="@+id/rreFooterArea"
+            app:layout_constraintTop_toTopOf="@+id/rreFooterArea" />
+
+        <Button
+            android:id="@+id/rreSaveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_button"
+            app:layout_constraintBottom_toBottomOf="@+id/rreFooterArea"
+            app:layout_constraintEnd_toEndOf="@+id/rreFooterArea"
+            app:layout_constraintStart_toEndOf="@+id/rreBackButton"
+            app:layout_constraintTop_toTopOf="@+id/rreFooterArea" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
