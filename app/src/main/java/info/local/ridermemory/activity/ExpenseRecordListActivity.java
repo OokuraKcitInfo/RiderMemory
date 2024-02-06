@@ -78,7 +78,7 @@ public class ExpenseRecordListActivity extends AppCompatActivity {
 
         findViewById(R.id.erlBackButton).setOnClickListener(v -> finish());
         findViewById(R.id.erlAddButton).setOnClickListener(v -> {
-            Intent intent = new Intent(ExpenseRecordListActivity.this, ExpenseRecordEditActivity.class);
+            Intent intent = new Intent(this, ExpenseRecordEditActivity.class);
             startActivity(intent);
         });
     }
@@ -128,7 +128,9 @@ public class ExpenseRecordListActivity extends AppCompatActivity {
                 expenseAmountText = itemView.findViewById(R.id.rerlcTotalMoneyTextView);
 
                 itemView.setOnClickListener(v -> {
-                    Log.d(Constant.LOG_TAG, entity.toString());
+                    Intent it = new Intent(ExpenseRecordListActivity.this, ExpenseRecordEditActivity.class);
+                    it.putExtra(ExpenseRecordEditActivity.ENTITY_KEY, entity.expenseRecordEntity);
+                    startActivity(it);
                 });
             }
 

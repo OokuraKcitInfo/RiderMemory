@@ -23,4 +23,5 @@ public class ApplicationViewModel extends AndroidViewModel {
 
     public LiveData<List<ExpenseRecordWithCategoryEntity>> getExpenseRecordListDesc() { return repository.getExpenseRecordListDesc(); }
     public void insertExpenseRecord(ExpenseRecordEntity entity) { repository.insertExpenseRecord(entity); }
+    public void updateExpenseRecord(ExpenseRecordEntity entity) { repository.updateExpenseRecord(entity); }
 }

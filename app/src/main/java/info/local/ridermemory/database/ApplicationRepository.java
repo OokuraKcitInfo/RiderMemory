@@ -25,4 +25,6 @@ public class ApplicationRepository {
 
     public LiveData<List<ExpenseRecordWithCategoryEntity>> getExpenseRecordListDesc() { return expenseRecordWithCategoryDao.findExpenseRecordWithCategoryList(); }
     public void insertExpenseRecord(ExpenseRecordEntity entity) { ApplicationRoomDatabase.databaseWriteExecutor.execute(() -> expenseRecordDao.insert(entity)); }
+
+    public void updateExpenseRecord(ExpenseRecordEntity entity) { ApplicationRoomDatabase.databaseWriteExecutor.execute(() -> expenseRecordDao.update(entity));}
 }

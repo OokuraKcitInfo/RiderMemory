@@ -6,8 +6,10 @@ import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "t_expense_record")
-public class ExpenseRecordEntity {
+public class ExpenseRecordEntity implements Serializable {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     private int expenseRecordId;
