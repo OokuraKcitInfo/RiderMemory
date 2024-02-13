@@ -14,6 +14,8 @@ public class ApplicationRepository {
     private final ExpenseRecordDao expenseRecordDao;
     private final ExpenseRecordWithCategoryDao expenseRecordWithCategoryDao;
     private final ExpenseRecordTotallingDao expenseRecordTotallingDao;
+    
+    private final TouringRecordDao touringRecordDao;
 
     public ApplicationRepository(Application application) throws JSONException, IOException {
         ApplicationRoomDatabase database = ApplicationRoomDatabase.getInstance(application);
@@ -21,6 +23,7 @@ public class ApplicationRepository {
         expenseRecordDao = database.expenseRecordDao();
         expenseRecordWithCategoryDao = database.expenseRecordWithCategoryDao();
         expenseRecordTotallingDao = database.expenseRecordTotallingDao();
+        touringRecordDao = database.touringRecordDao();
     }
 
     public LiveData<List<CategoryEntity>> getCategoryListAsc() { return categoryDao.findCategoryListAsc(); }
@@ -30,4 +33,9 @@ public class ApplicationRepository {
     public void updateExpenseRecord(ExpenseRecordEntity entity) { ApplicationRoomDatabase.databaseWriteExecutor.execute(() -> expenseRecordDao.update(entity));}
     public LiveData<ExpenseRecordTotallingEntity> getExpenseRecordTotalling() { return expenseRecordTotallingDao.findExpenseRecordTotalling(); }
     public LiveData<ExpenseRecordTotallingEntity> getExpenseRecordTotallingByCategoryId(int categoryId) { return expenseRecordTotallingDao.findExpenseRecordTotallingByCategoryId(categoryId); }
+
+    public void insertTouringRecord(TouringRecordEntity entity) { ApplicationRoomDatabase.databaseWriteExecutor.execute(() -> touringRecordDao.insert(entity)); }
+    public void updateTouringRecord(TouringRecordEntity entity) { ApplicationRoomDatabase.databaseWriteExecutor.execute(() -> touringRecordDao.update(entity)); }
+    public LiveData<List<TouringRecordEntity>> getAllTouringRecordsDesc() { return touringRecordDao.findAllTouringRecordsDesc(); }
+    public LiveData<TouringRecordEntity> getTouringRecordFromId(int id) { return touringRecordDao.findTouringRecordFromId(id); }
 }

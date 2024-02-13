@@ -40,4 +40,8 @@ public class ApplicationViewModel extends AndroidViewModel {
     public void insertExpenseRecord(ExpenseRecordEntity entity) { repository.insertExpenseRecord(entity); }
     public void updateExpenseRecord(ExpenseRecordEntity entity) { repository.updateExpenseRecord(entity); }
     public LiveData<ExpenseRecordTotallingEntity> getExpenseRecordTotalling() { return expenseRecordTotalling; }
+    public void insertTouringRecord(TouringRecordEntity entity) { repository.insertTouringRecord(entity); }
+    public void updateTouringRecord(TouringRecordEntity entity) { repository.updateTouringRecord(entity); }
+    public LiveData<List<TouringRecordEntity>> getAllTouringRecordsDesc() { return repository.getAllTouringRecordsDesc(); }
+    public LiveData<TouringRecordEntity> getTouringRecordFromId(int id) { return repository.getTouringRecordFromId(id); }
 }
