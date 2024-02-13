@@ -126,8 +126,11 @@ public class TouringRecordEditActivity extends AppCompatActivity implements Date
 
     private void setComponentFromEntity() {
         try {
-            Bitmap bitmap = Constant.readImageFromExternalStorage(new File(entity.getTouringImagePath().getPath()));
-            imageView.setImageBitmap(Constant.modificationRotate(bitmap, entity.getTouringImageDegree()));
+            Uri imageUri = entity.getTouringImagePath();
+            if (imageUri != null) {
+                Bitmap bitmap = Constant.readImageFromExternalStorage(new File(imageUri.getPath()));
+                imageView.setImageBitmap(Constant.modificationRotate(bitmap, entity.getTouringImageDegree()));
+            }
             dateEdit.setText(Constant.DISPLAY_DATE_FORMAT.format(Constant.DB_DATE_FORMAT.parse(entity.getTouringDate())));
             placeEdit.setText(entity.getTouringPlace());
             memoEdit.setText(entity.getTouringMemo());
