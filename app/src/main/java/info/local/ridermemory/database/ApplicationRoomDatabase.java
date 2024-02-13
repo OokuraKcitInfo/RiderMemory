@@ -23,7 +23,7 @@ import java.util.concurrent.Executors;
 
 import info.local.ridermemory.util.Constant;
 
-@Database(entities = {CategoryEntity.class, ExpenseRecordEntity.class, TouringRecordEntity.class}, version = 1, exportSchema = false)
+@Database(entities = {CategoryEntity.class, ExpenseRecordEntity.class, TouringRecordEntity.class, MainteRecordEntity.class}, version = 1, exportSchema = false)
 @TypeConverters({DatabaseTypeConverters.class})
 public abstract class ApplicationRoomDatabase extends RoomDatabase {
     public abstract CategoryDao categoryDao();
@@ -31,6 +31,7 @@ public abstract class ApplicationRoomDatabase extends RoomDatabase {
     public abstract ExpenseRecordWithCategoryDao expenseRecordWithCategoryDao();
     public abstract ExpenseRecordTotallingDao expenseRecordTotallingDao();
     public abstract TouringRecordDao touringRecordDao();
+    public abstract MainteRecordDao mainteRecordDao();
     private static volatile ApplicationRoomDatabase INSTANCE;
     public static final int NUMBER_OF_THREADS = 4;
     static final ExecutorService databaseWriteExecutor =

@@ -44,4 +44,9 @@ public class ApplicationViewModel extends AndroidViewModel {
     public void updateTouringRecord(TouringRecordEntity entity) { repository.updateTouringRecord(entity); }
     public LiveData<List<TouringRecordEntity>> getAllTouringRecordsDesc() { return repository.getAllTouringRecordsDesc(); }
     public LiveData<TouringRecordEntity> getTouringRecordFromId(int id) { return repository.getTouringRecordFromId(id); }
+    public void insertMaintenanceRecord(MainteRecordEntity entity) { repository.insertMaintenanceRecord(entity); }
+    public void updateMaintenanceRecord(MainteRecordEntity entity) { repository.updateMaintenanceRecord(entity); }
+    public void deleteMaintenanceRecord(MainteRecordEntity entity) { repository.deleteMaintenanceRecord(entity); }
+    public LiveData<List<MainteRecordEntity>> getAllMaintenanceRecordDesc() { return repository.getAllMaintenanceRecordDesc(); }
+    public LiveData<MainteRecordEntity> getMaintenanceRecord(int id) { return repository.getMaintenanceRecord(id); }
 }

@@ -14,8 +14,8 @@ public class ApplicationRepository {
     private final ExpenseRecordDao expenseRecordDao;
     private final ExpenseRecordWithCategoryDao expenseRecordWithCategoryDao;
     private final ExpenseRecordTotallingDao expenseRecordTotallingDao;
-    
     private final TouringRecordDao touringRecordDao;
+    private final MainteRecordDao mainteRecordDao;
 
     public ApplicationRepository(Application application) throws JSONException, IOException {
         ApplicationRoomDatabase database = ApplicationRoomDatabase.getInstance(application);
@@ -24,6 +24,7 @@ public class ApplicationRepository {
         expenseRecordWithCategoryDao = database.expenseRecordWithCategoryDao();
         expenseRecordTotallingDao = database.expenseRecordTotallingDao();
         touringRecordDao = database.touringRecordDao();
+        mainteRecordDao = database.mainteRecordDao();
     }
 
     public LiveData<List<CategoryEntity>> getCategoryListAsc() { return categoryDao.findCategoryListAsc(); }
@@ -38,4 +39,10 @@ public class ApplicationRepository {
     public void updateTouringRecord(TouringRecordEntity entity) { ApplicationRoomDatabase.databaseWriteExecutor.execute(() -> touringRecordDao.update(entity)); }
     public LiveData<List<TouringRecordEntity>> getAllTouringRecordsDesc() { return touringRecordDao.findAllTouringRecordsDesc(); }
     public LiveData<TouringRecordEntity> getTouringRecordFromId(int id) { return touringRecordDao.findTouringRecordFromId(id); }
+
+    public void insertMaintenanceRecord(MainteRecordEntity entity) { ApplicationRoomDatabase.databaseWriteExecutor.execute(() -> mainteRecordDao.insert(entity)); }
+    public void updateMaintenanceRecord(MainteRecordEntity entity) { ApplicationRoomDatabase.databaseWriteExecutor.execute(() -> mainteRecordDao.update(entity)); }
+    public void deleteMaintenanceRecord(MainteRecordEntity entity) { ApplicationRoomDatabase.databaseWriteExecutor.execute(() -> mainteRecordDao.delete(entity)); }
+    public LiveData<List<MainteRecordEntity>> getAllMaintenanceRecordDesc() { return mainteRecordDao.findAllMaintenanceRecordDesc(); }
+    public LiveData<MainteRecordEntity> getMaintenanceRecord(int id) { return mainteRecordDao.findMaintenanceRecord(id); }
 }

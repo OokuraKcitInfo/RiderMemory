@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rmrlcListArea"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/rmrlcNextMainteImageView"
@@ -18,7 +18,7 @@
     <LinearLayout
         android:id="@+id/rmrlcDateMileageLinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="65dp"
         android:layout_marginBottom="700dp"
         android:orientation="horizontal"
@@ -47,7 +47,7 @@
     <LinearLayout
         android:id="@+id/rmrlcMainteTextViewLinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="65dp"
         android:layout_marginTop="35dp"
         android:layout_marginBottom="670dp"
